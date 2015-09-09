@@ -1,0 +1,26 @@
+/* Global Styles */
+h1, h2, h3, h4, h5, h6 {font-weight: bold;}
+
+/* Ми додали відстань лише зверху елемента: -top */
+.alert {margin-top: 10px;}
+
+/* знайшли елемент футера по його унікальному ідентифікатору footer */
+/* задаємо верхню межу елемента: ширина лінії, тип лінії, колір лінії */
+/* задаємо внутрішню відстань елемента до верхнього краю */
+#footer {
+  border-top: 1px solid #dddddd;
+  padding-top: 10px;
+  }
+         
+/* Groups Selector */
+#group-selector {margin-top: 30px;}
+
+#group-selector select {
+   margin: 0;
+   width: 85%;
+   background-color: #ffffff;
+   border: 1px solid #cccccc;
+   height: 30px;
+   line-height: 30px;
+   color: #555555;
+   }
