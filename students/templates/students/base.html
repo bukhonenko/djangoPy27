@@ -41,9 +41,9 @@
               <a href="{% url "home" %}">Студенти</a>
            </li>
 
-           <!-- {% url "journal" as url_journal %}-->
-            <li role="presentation" {% if '/journal' in request.path %} class="active" {% endif %}>
-                <a href="/journal">Відвідування</a>
+           <!-- {% url "visitlog" as url_visitlog %}-->
+            <li role="presentation" {% if '/visitlog' in request.path %} class="active" {% endif %}>
+                <a href="/visitlog">Відвідування</a>
             </li>
 
             {% url "groups" as url_groups %}

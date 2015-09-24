@@ -29,5 +29,8 @@ urlpatterns = patterns('',
     url(r'^groups/(?P<gid>\d+)/edit/$','students.views.groups.groups_edit', name='groups_edit'),
     url(r'^groups/(?P<gid>\d+)/delete/$','students.views.groups.groups_delete', name='groups_delete'),
 
+    # Visitlog urls
+    url(r'^visitlog/$', 'students.views.visitlog.visit_log', name='visitlog'),
+
     url(r'^admin/', include(admin.site.urls)),
     )

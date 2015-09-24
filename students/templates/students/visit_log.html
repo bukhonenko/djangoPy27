@@ -1,0 +1,201 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Відвідування{% endblock meta_title %}
+
+{% block title %}Облік Відвідування{% endblock title %}
+
+<!-- Logo -->
+{% block logo %}
+<div class="col-xs-8">
+  <h1>Сервіс Обліку Студентів</h1>
+</div>
+{% endblock logo %}
+
+<!-- Groups Selector -->
+{% block groups_selector %}
+<div class="col-xs-4" id="group-selector">
+  <strong>Група:</strong>
+    <select>
+      <option value="">Усі Студенти</option>
+      <option value="">МтМ - 21, Подоба Віталій (No 254)</option>
+      <option value="">МтМ - 22, Корост Андрій (No 2123)</option>
+      </select>
+</div>
+{% endblock groups_selector %}
+
+      <!-- Start Main Page Content -->
+      {% block content %}
+      <div class="row" id="content-columns">
+        <div class="col-xs-12" id="content-column">
+
+          <p class="text-center"> <a href="">&larr;</a>
+            <strong>Жовтень 2014</strong>
+          <a href="">&rarr;</a></p>
+
+        <!-- Start Students Listing -->
+        <table class="table table-hover table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Студент</th>
+              <th>Ср 1</th>
+              <th>Чт 2</th>
+              <th>Пт 3</th>
+              <th>Сб 4</th>
+              <th>Нд 5</th>
+              <th>Пн 6</th>
+              <th>Вт 7</th>
+              <th>Ср 8</th>
+              <th>Чт 9</th>
+              <th>Пт 10</th>
+              <th>Сб 11</th>
+              <th>Нд 12</th>
+              <th>Пн 13</th>
+              <th>Вт 14</th>
+              <th>Ср 15</th>
+              <th>Чт 16</th>
+              <th>Пт 17</th>
+              <th>Сб 18</th>
+              <th>Нд 19</th>
+              <th>Пн 20</th>
+              <th>Вт 21</th>
+              <th>Ср 22</th>
+              <th>Чт 23</th>
+              <th>Пт 24</th>
+              <th>Сб 25</th>
+              <th>Нд 26</th>
+              <th>Пн 27</th>
+              <th>Вт 28</th>
+              <th>Ср 29</th>
+              <th>Чт 30</th>
+              <th>Пт 31</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><a href="#">Ройтбурд Олександр</a></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><a href="#">Лютий Орест</a></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><a href="#">Ярош Дмитро</a></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+            </tr>
+          </tbody>
+        </table>
+
+     <!-- End Students Listing -->
+
+        </div>
+
+      </div>
+      <!-- End Main Page Content -->
+      {% endblock content %}
+
+      <!-- Start Footer -->
+      {% block footer %}
+      <div class="row" id="footer">
+        <div class="col-xs-12">
+          &copy; 2014 Сервіс Обліку Студентів
+        </div>
+      </div>
+      <!-- End Footer -->
+      {% endblock footer %}

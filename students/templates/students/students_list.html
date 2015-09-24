@@ -21,7 +21,7 @@
       <option value="">Усі Студенти</option>
       <option value="">МтМ - 21, Подоба Віталій (No 254)</option>
       <option value="">МтМ - 22, Корост Андрій (No 2123)</option>
-      </select>
+    </select>
 </div>
 {% endblock groups_selector %}
 
@@ -60,7 +60,7 @@
         <a role="menuitem" tabindex="-1" href="{% url "students_edit" student.id %}">Редагувати</a>
       </li>
       <li role="presentation">
-        <a role="menuitem" tabindex="-1" href="/journal/1">Відвідування</a>
+        <a role="menuitem" tabindex="-1" href="/visitlog/1">Відвідування</a>
       </li>
       <li role="presentation">
         <a role="menuitem" tabindex="-1" href="{%url "students_delete" student.id %}">Видалити</a>

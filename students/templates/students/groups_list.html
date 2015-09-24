@@ -4,7 +4,7 @@
 
 {% block meta_title %}Групи{% endblock meta_title %}
 
-{% block title %}База Студентів{% endblock title %}
+{% block title %}Групи{% endblock title %}
 
 <!-- Logo -->
 {% block logo %}
@@ -57,7 +57,7 @@
           <a role="menuitem" tabindex="-1" href="{% url "groups_edit" group.id %}">Редагувати</a>
         </li>
         <li role="presentation">
-          <a role="menuitem" tabindex="-1" href="/journal/1">Відвідування</a>
+          <a role="menuitem" tabindex="-1" href="/visitlog/1">Відвідування</a>
         </li>
         <li role="presentation">
           <a role="menuitem" tabindex="-1" href="{%url "groups_delete" group.id %}">Видалити</a>
