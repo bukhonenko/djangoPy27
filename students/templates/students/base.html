@@ -23,26 +23,16 @@
       <!-- Start Header -->
       <div class="row" id="header">
 
-        <!-- Logo -->
-       <div class="col-xs-8">
-          <h1>Сервіс Обліку Студентів</h1>
-        </div>
+         <!-- Logo -->
+{% block logo %}{% endblock logo %}
 
         <!-- Groups Selector -->
-        <div class="col-xs-4" id="group-selector">
-          <strong>Група:</strong>
-          <select>
-          <option value="">Усі Студенти</option>
-          <option value="">МтМ - 21, Подоба Віталій (No 254)</option>
-          <option value="">МтМ - 22, Корост Андрій (No 2123)</option>
-          </select>
-        </div>
+{% block groups_selector %}{% endblock groups_selector %}
       </div>
       <!-- End Header -->
 
       <!-- Start SubHeader -->
       <div class="row" id="sub-header">
-
         <div class="col-xs-12">
           <ul class="nav nav-tabs" role="tablist">
 
@@ -63,7 +53,6 @@
 
           </ul>
         </div>
-
       </div>
       <!-- End SubHeader -->
 
@@ -80,20 +69,11 @@
 
           {% block content %}{% endblock content %}
 
-        <!-- End Students Listing -->
         </div>
       </div>
       <!-- End Main Page Content -->
 
-      <!-- Start Footer -->
-      <div class="row" id="footer">
-
-        <div class="col-xs-12">
-          &copy; 2014 Сервіс Обліку Студентів
-        </div>
-
-      </div>
-      <!-- End Footer -->
+    {% block footer %}{% endblock footer %}
 
     </div>
     <!-- End Container -->
