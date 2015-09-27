@@ -7,4 +7,10 @@ from django.http import HttpResponse
 
 # Views for Students
 def visit_log(request):
-    return HttpResponse('<h1>Students Visitlog</h1>')
+    return render(request, 'students/visit_log.html', {})
+
+def visit_student(request, sid):
+    return HttpResponse('<h1>Student visiting log %s</h1>' % sid)
+
+def visitlog_update(request):
+    return HttpResponse('<h1>Visitlog update</h1>')

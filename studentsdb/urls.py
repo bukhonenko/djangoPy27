@@ -31,6 +31,9 @@ urlpatterns = patterns('',
 
     # Visitlog urls
     url(r'^visitlog/$', 'students.views.visitlog.visit_log', name='visitlog'),
+    url(r'^visitlog/(?P<sid>\d+)/$', 'students.views.visitlog.visit_student', name='visit_student'),
+    url(r'^visitlog/update/$', 'students.views.visitlog.visitlog_update', name='visitlog_update'),
+
 
     url(r'^admin/', include(admin.site.urls)),
     )
