@@ -70,20 +70,13 @@
 </tbody>
 </table>
 
-      <!-- Pagination -->
-      <nav>
-        <ul class="pagination">
-          <li><a href="#">&laquo;</a></li>
-          <li><a href="#">1</a></li>
-          <li class="active"><a href="#">2</a></li>
-          <li><a href="#">Далі</a></li>
-          <li><a href="#">&raquo;</a></li>
-        </ul>
-      </nav>
+<!-- Pagination -->
+{% include "students/pagination.html" %}
+
 <!-- End Students Listing -->
 {% endblock content %}
 
-!-- Start Footer -->
+<!-- Start Footer -->
 {% block footer %}
 <div class="row" id="footer">
   <div class="col-xs-12">
