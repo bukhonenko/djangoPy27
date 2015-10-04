@@ -4,21 +4,13 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.http import HttpResponse
-from .students import students_list
+# from .students import students_list
+from ..models import Student
 
-# Views for Students
+# Views for Visitlog
 def visit_log(request):
-    student_log = (
-        {'id': 1,
-        'first_name': u'Олександр',
-        'last_name': u'Ройтбурд',},
-        {'id': 2,
-        'first_name': u'Орест',
-        'last_name': u'Лютий',},
-        {'id': 3,
-        'first_name': u'Дмитро',
-        'last_name': u'Ярош',},
-        )
+    student_log = Student.objects.all()
+
     days = (
         {'week_day': u'Пн',
         'day':1},

@@ -37,3 +37,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     )
+from .settings import MEDIA_ROOT, DEBUG
+if DEBUG:
+    # serve files from media folder
+    urlpatterns += patterns('', url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+                            'document_root': MEDIA_ROOT}))
