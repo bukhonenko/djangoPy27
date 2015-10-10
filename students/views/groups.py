@@ -1,23 +1,16 @@
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render
-
 # Create your views here.
+
+from django.shortcuts import render
 from django.http import HttpResponse
+
+from ..models import Group
 
 # Views for Groups
 def groups_list(request):
-    groups = (
-        {'id': 1,
-        'group_title': u'МтМ-27',
-        'group_leader': u'Дарт Вейдер',},
-        {'id': 2,
-        'group_title': u'МтМ-28',
-        'group_leader': u'Майстер Йода',},
-        {'id': 3,
-        'group_title': u'МтМ-29',
-        'group_leader': u'Джабба Хатт',},
-        )
+    groups = Group.objects.all()
+
     return render(request, 'students/groups_list.html', {'groups': groups})
 
 def groups_add(request):
