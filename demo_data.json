@@ -1,67 +1,21 @@
 [
 {
     "fields": {
-        "model": "logentry",
-        "app_label": "admin"
+        "username": "alex",
+        "first_name": "",
+        "last_name": "",
+        "is_active": true,
+        "is_superuser": true,
+        "is_staff": true,
+        "last_login": "2015-10-01T19:29:09.436Z",
+        "groups": [],
+        "user_permissions": [],
+        "password": "pbkdf2_sha256$20000$i0IS0EULZl6t$9L6lyQKb+01fKhrB68f+IIONjecPggr9eXen/8A6xIU=",
+        "email": "alex.bukhonenko@gmail.com",
+        "date_joined": "2015-09-03T21:52:19.367Z"
     },
-    "model": "contenttypes.contenttype",
+    "model": "auth.user",
     "pk": 1
-},
-{
-    "fields": {
-        "model": "permission",
-        "app_label": "auth"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 2
-},
-{
-    "fields": {
-        "model": "group",
-        "app_label": "auth"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 3
-},
-{
-    "fields": {
-        "model": "user",
-        "app_label": "auth"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 4
-},
-{
-    "fields": {
-        "model": "contenttype",
-        "app_label": "contenttypes"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 5
-},
-{
-    "fields": {
-        "model": "session",
-        "app_label": "sessions"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 6
-},
-{
-    "fields": {
-        "model": "student",
-        "app_label": "students"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 7
-},
-{
-    "fields": {
-        "model": "group",
-        "app_label": "students"
-    },
-    "model": "contenttypes.contenttype",
-    "pk": 8
 },
 {
     "fields": {
@@ -243,247 +197,18 @@
 },
 {
     "fields": {
-        "codename": "add_logentry",
-        "name": "Can add log entry",
-        "content_type": 1
-    },
-    "model": "auth.permission",
-    "pk": 1
-},
-{
-    "fields": {
-        "codename": "change_logentry",
-        "name": "Can change log entry",
-        "content_type": 1
-    },
-    "model": "auth.permission",
-    "pk": 2
-},
-{
-    "fields": {
-        "codename": "delete_logentry",
-        "name": "Can delete log entry",
-        "content_type": 1
-    },
-    "model": "auth.permission",
-    "pk": 3
-},
-{
-    "fields": {
-        "codename": "add_permission",
-        "name": "Can add permission",
-        "content_type": 2
-    },
-    "model": "auth.permission",
-    "pk": 4
-},
-{
-    "fields": {
-        "codename": "change_permission",
-        "name": "Can change permission",
-        "content_type": 2
-    },
-    "model": "auth.permission",
-    "pk": 5
-},
-{
-    "fields": {
-        "codename": "delete_permission",
-        "name": "Can delete permission",
-        "content_type": 2
-    },
-    "model": "auth.permission",
-    "pk": 6
-},
-{
-    "fields": {
-        "codename": "add_group",
-        "name": "Can add group",
-        "content_type": 3
-    },
-    "model": "auth.permission",
-    "pk": 7
-},
-{
-    "fields": {
-        "codename": "change_group",
-        "name": "Can change group",
-        "content_type": 3
-    },
-    "model": "auth.permission",
-    "pk": 8
-},
-{
-    "fields": {
-        "codename": "delete_group",
-        "name": "Can delete group",
-        "content_type": 3
-    },
-    "model": "auth.permission",
-    "pk": 9
-},
-{
-    "fields": {
-        "codename": "add_user",
-        "name": "Can add user",
-        "content_type": 4
-    },
-    "model": "auth.permission",
-    "pk": 10
-},
-{
-    "fields": {
-        "codename": "change_user",
-        "name": "Can change user",
-        "content_type": 4
-    },
-    "model": "auth.permission",
-    "pk": 11
-},
-{
-    "fields": {
-        "codename": "delete_user",
-        "name": "Can delete user",
-        "content_type": 4
-    },
-    "model": "auth.permission",
-    "pk": 12
-},
-{
-    "fields": {
-        "codename": "add_contenttype",
-        "name": "Can add content type",
-        "content_type": 5
-    },
-    "model": "auth.permission",
-    "pk": 13
-},
-{
-    "fields": {
-        "codename": "change_contenttype",
-        "name": "Can change content type",
-        "content_type": 5
-    },
-    "model": "auth.permission",
-    "pk": 14
-},
-{
-    "fields": {
-        "codename": "delete_contenttype",
-        "name": "Can delete content type",
-        "content_type": 5
-    },
-    "model": "auth.permission",
-    "pk": 15
-},
-{
-    "fields": {
-        "codename": "add_session",
-        "name": "Can add session",
-        "content_type": 6
-    },
-    "model": "auth.permission",
-    "pk": 16
-},
-{
-    "fields": {
-        "codename": "change_session",
-        "name": "Can change session",
-        "content_type": 6
-    },
-    "model": "auth.permission",
-    "pk": 17
-},
-{
-    "fields": {
-        "codename": "delete_session",
-        "name": "Can delete session",
-        "content_type": 6
-    },
-    "model": "auth.permission",
-    "pk": 18
-},
-{
-    "fields": {
-        "codename": "add_student",
-        "name": "Can add student",
-        "content_type": 7
-    },
-    "model": "auth.permission",
-    "pk": 19
-},
-{
-    "fields": {
-        "codename": "change_student",
-        "name": "Can change student",
-        "content_type": 7
-    },
-    "model": "auth.permission",
-    "pk": 20
-},
-{
-    "fields": {
-        "codename": "delete_student",
-        "name": "Can delete student",
-        "content_type": 7
-    },
-    "model": "auth.permission",
-    "pk": 21
-},
-{
-    "fields": {
-        "codename": "add_group",
-        "name": "Can add \u0413\u0440\u0443\u043f\u0430",
-        "content_type": 8
-    },
-    "model": "auth.permission",
-    "pk": 22
-},
-{
-    "fields": {
-        "codename": "change_group",
-        "name": "Can change \u0413\u0440\u0443\u043f\u0430",
-        "content_type": 8
-    },
-    "model": "auth.permission",
-    "pk": 23
-},
-{
-    "fields": {
-        "codename": "delete_group",
-        "name": "Can delete \u0413\u0440\u0443\u043f\u0430",
-        "content_type": 8
-    },
-    "model": "auth.permission",
-    "pk": 24
-},
-{
-    "fields": {
-        "username": "alex",
-        "first_name": "",
-        "last_name": "",
-        "is_active": true,
-        "is_superuser": true,
-        "is_staff": true,
-        "last_login": "2015-10-01T19:29:09.436Z",
-        "groups": [],
-        "user_permissions": [],
-        "password": "pbkdf2_sha256$20000$i0IS0EULZl6t$9L6lyQKb+01fKhrB68f+IIONjecPggr9eXen/8A6xIU=",
-        "email": "alex.bukhonenko@gmail.com",
-        "date_joined": "2015-09-03T21:52:19.367Z"
-    },
-    "model": "auth.user",
-    "pk": 1
-},
-{
-    "fields": {
         "action_flag": 1,
         "action_time": "2015-10-04T11:22:15.100Z",
         "object_repr": "Student object",
         "object_id": "4",
         "change_message": "",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 1
@@ -495,8 +220,13 @@
         "object_repr": "Student object",
         "object_id": "5",
         "change_message": "",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 2
@@ -508,8 +238,13 @@
         "object_repr": "Student object",
         "object_id": "6",
         "change_message": "",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 3
@@ -521,8 +256,13 @@
         "object_repr": "\u041c\u0430\u0439\u0441\u0442\u0435\u0440 \u0419\u043e\u0434\u0430",
         "object_id": "6",
         "change_message": "Changed photo.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 4
@@ -534,8 +274,13 @@
         "object_repr": "\u041c\u0430\u0439\u0441\u0442\u0435\u0440 \u0419\u043e\u0434\u0430",
         "object_id": "6",
         "change_message": "Changed photo.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 5
@@ -547,8 +292,13 @@
         "object_repr": "\u041e\u0440\u0435\u0441\u0442 \u041b\u044e\u0442\u0438\u0439",
         "object_id": "5",
         "change_message": "Changed photo.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 6
@@ -560,8 +310,13 @@
         "object_repr": "\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0420\u043e\u0439\u0442\u0431\u0443\u0440\u0434",
         "object_id": "4",
         "change_message": "Changed photo.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 7
@@ -573,8 +328,13 @@
         "object_repr": "\u0414\u0430\u0440\u0442 \u0412\u0435\u0439\u0434\u0435\u0440",
         "object_id": "7",
         "change_message": "",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 8
@@ -586,8 +346,13 @@
         "object_repr": "Roman Demo",
         "object_id": "2",
         "change_message": "Changed photo.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 9
@@ -599,8 +364,13 @@
         "object_repr": "Oleg Podoba",
         "object_id": "1",
         "change_message": "Changed photo.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 10
@@ -612,8 +382,13 @@
         "object_repr": "\u0414\u043c\u0438\u0442\u0440\u043e \u042f\u0440\u043e\u0448",
         "object_id": "3",
         "change_message": "Changed photo.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 11
@@ -625,8 +400,13 @@
         "object_repr": "Oleg Podoba",
         "object_id": "1",
         "change_message": "Changed photo.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 12
@@ -638,8 +418,13 @@
         "object_repr": "Oleg Podoba",
         "object_id": "1",
         "change_message": "No fields changed.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 13
@@ -651,8 +436,13 @@
         "object_repr": "Roman Demo",
         "object_id": "2",
         "change_message": "Changed photo.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 14
@@ -664,8 +454,13 @@
         "object_repr": "Roman Demo",
         "object_id": "2",
         "change_message": "No fields changed.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 15
@@ -677,8 +472,13 @@
         "object_repr": "Roman Demo",
         "object_id": "2",
         "change_message": "Changed notes.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 16
@@ -690,8 +490,13 @@
         "object_repr": "\u041c\u0442\u041c (Roman Demo)",
         "object_id": "2",
         "change_message": "",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 17
@@ -703,8 +508,13 @@
         "object_repr": "VnV (Roman Demo)",
         "object_id": "2",
         "change_message": "Changed title.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 18
@@ -716,8 +526,13 @@
         "object_repr": "\u041c\u0442\u041c (Roman Demo)",
         "object_id": "2",
         "change_message": "Changed title.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 19
@@ -729,8 +544,13 @@
         "object_repr": "\u041c\u0441\u041c (Roman Demo)",
         "object_id": "2",
         "change_message": "Changed title.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 20
@@ -742,8 +562,13 @@
         "object_repr": "\u041c\u0442\u041c (Roman Demo)",
         "object_id": "2",
         "change_message": "Changed title.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 21
@@ -755,8 +580,13 @@
         "object_repr": "\u041c\u0442\u041c (\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0420\u043e\u0439\u0442\u0431\u0443\u0440\u0434)",
         "object_id": "3",
         "change_message": "",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 22
@@ -768,8 +598,13 @@
         "object_repr": "\u041c\u0442\u041c (\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0420\u043e\u0439\u0442\u0431\u0443\u0440\u0434)",
         "object_id": "3",
         "change_message": "Changed notes.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 23
@@ -781,8 +616,13 @@
         "object_repr": "\u041c\u0442\u041c (\u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440 \u0420\u043e\u0439\u0442\u0431\u0443\u0440\u0434)",
         "object_id": "3",
         "change_message": "Changed notes.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 24
@@ -794,8 +634,13 @@
         "object_repr": "\u041c\u0442\u041c (\u041c\u0430\u0439\u0441\u0442\u0435\u0440 \u0419\u043e\u0434\u0430)",
         "object_id": "3",
         "change_message": "Changed leader.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 25
@@ -807,8 +652,13 @@
         "object_repr": "\u041c\u0442\u041c (Roman Demo)",
         "object_id": "3",
         "change_message": "Changed leader.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 26
@@ -820,8 +670,13 @@
         "object_repr": "\u041c\u0442\u041c (Oleg Podoba)",
         "object_id": "1",
         "change_message": "No fields changed.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 27
@@ -833,8 +688,13 @@
         "object_repr": "\u041c\u0442\u041c (\u041e\u0440\u0435\u0441\u0442 \u041b\u044e\u0442\u0438\u0439)",
         "object_id": "3",
         "change_message": "Changed leader.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 28
@@ -846,8 +706,13 @@
         "object_repr": "\u041c\u0442\u041c (Roman Demo)",
         "object_id": "2",
         "change_message": "No fields changed.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 29
@@ -859,8 +724,13 @@
         "object_repr": "\u041c\u0441\u041c (\u041c\u0430\u0439\u0441\u0442\u0435\u0440 \u0419\u043e\u0434\u0430)",
         "object_id": "4",
         "change_message": "",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 30
@@ -872,8 +742,13 @@
         "object_repr": "\u0414\u0430\u0440\u0442 \u0412\u0435\u0439\u0434\u0435\u0440",
         "object_id": "7",
         "change_message": "Changed student_group.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 31
@@ -885,8 +760,13 @@
         "object_repr": "\u0414\u0430\u0440\u0442 \u0412\u0435\u0439\u0434\u0435\u0440",
         "object_id": "7",
         "change_message": "No fields changed.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 32
@@ -898,8 +778,13 @@
         "object_repr": "Oleg Podoba",
         "object_id": "1",
         "change_message": "Changed student_group.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 33
@@ -911,8 +796,13 @@
         "object_repr": "\u041e\u0440\u0435\u0441\u0442 \u041b\u044e\u0442\u0438\u0439",
         "object_id": "5",
         "change_message": "Changed student_group.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 34
@@ -924,8 +814,13 @@
         "object_repr": "\u041e\u0440\u0435\u0441\u0442 \u041b\u044e\u0442\u0438\u0439",
         "object_id": "5",
         "change_message": "Changed student_group.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 35
@@ -937,8 +832,13 @@
         "object_repr": "\u041c\u0430\u0439\u0441\u0442\u0435\u0440 \u0419\u043e\u0434\u0430",
         "object_id": "6",
         "change_message": "Changed student_group.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 36
@@ -950,8 +850,13 @@
         "object_repr": "\u041c\u0430\u0439\u0441\u0442\u0435\u0440 \u0419\u043e\u0434\u0430",
         "object_id": "6",
         "change_message": "Changed student_group.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 37
@@ -963,8 +868,13 @@
         "object_repr": "\u041c\u0430\u0439\u0441\u0442\u0435\u0440 \u0419\u043e\u0434\u0430",
         "object_id": "6",
         "change_message": "Changed student_group.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 38
@@ -976,8 +886,13 @@
         "object_repr": "\u041c\u0430\u0439\u0441\u0442\u0435\u0440 \u0419\u043e\u0434\u0430",
         "object_id": "6",
         "change_message": "Changed student_group.",
-        "user": 1,
-        "content_type": 7
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "student"
+        ]
     },
     "model": "admin.logentry",
     "pk": 39
@@ -989,8 +904,13 @@
         "object_repr": "\u041c\u0441\u041c (\u041c\u0430\u0439\u0441\u0442\u0435\u0440 \u0419\u043e\u0434\u0430)",
         "object_id": "4",
         "change_message": "No fields changed.",
-        "user": 1,
-        "content_type": 8
+        "user": [
+            "alex"
+        ],
+        "content_type": [
+            "students",
+            "group"
+        ]
     },
     "model": "admin.logentry",
     "pk": 40
