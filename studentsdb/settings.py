@@ -78,22 +78,16 @@ WSGI_APPLICATION = 'studentsdb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+#Moved DATABASES variable to db.py module
+#added db.py to .gitignore no to keep mysql passwords in repository
+from .db import DATABASES
+
 # DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': os.path.join(BASE_DIR, '..', 'db.sqlite3'),
 #    }
 #}
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'USER': 'students_db_user',
-        'PASSWORD': 'bukhonenko',
-        'NAME': 'students_db',
-    }
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
