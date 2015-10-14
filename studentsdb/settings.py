@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'endless_pagination',
     'students',
 )
 
@@ -66,7 +67,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 "studentsdb.context_processors.students_proc",
-                # 'django.core.context_processors.request',
+                'django.core.context_processors.request',
+                
             ],
         },
     },

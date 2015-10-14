@@ -1,0 +1,118 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Екзамени{% endblock meta_title %}
+
+{% block title %}Екзамени{% endblock title %}
+
+<!-- Logo -->
+{% block logo %}
+<div class="col-xs-8">
+  <h1>Сервіс Обліку Студентів</h1>
+</div>
+{% endblock logo %}
+
+<!-- Groups Selector -->
+{% block groups_selector %}
+<div class="col-xs-4" id="group-selector">
+  <strong>Група:</strong>
+    <select>
+      <option value="">Усі Студенти</option>
+      <option value="">МтМ - 21, Подоба Віталій (No 254)</option>
+      <option value="">МтМ - 22, Корост Андрій (No 2123)</option>
+      </select>
+</div>
+{% endblock groups_selector %}
+
+
+{% block content %}
+<!-- Add Exam Button -->
+<a href="{%url "exams_add" %}" class="btn btn-primary">Додати екзамен</a>
+
+<!-- Start Groups Listing -->
+<table class="table table-hover table-striped">
+{% with order_by=request.GET.order_by reverse=request.GET.reverse%}
+  <thead>
+    <tr>
+      <th>No</a></th>
+
+      <th><a href="{% url "exams" %}?order_by=course{% if order_by == 'course' and reverse != '1' %}&amp;reverse=1{% endif %}">
+          Предмет
+      {% if order_by == 'course' and reverse != '1' %}&uarr;
+      {% elif order_by == 'course' and reverse == '1' %}&darr;
+      {% endif %}
+      </a></th>
+
+      <th><a href="{% url "exams" %}?order_by=lecturer{% if order_by == 'lecturer' and reverse != '1' %}&amp;reverse=1{% endif %}">
+         Викладач
+       {% if order_by == 'lecturer' and reverse != '1' %}&uarr;
+       {% elif order_by == 'lecturer' and reverse == '1' %}&darr;
+       {% endif %}
+      </a></th>
+
+      <th><a href="{% url "exams" %}?order_by=exam_group{% if order_by == 'exam_group' and reverse != '1' %}&amp;reverse=1{% endif %}">
+         Група
+       {% if order_by == 'exam_group' and reverse != '1' %}&uarr;
+       {% elif order_by == 'exam_group' and reverse == '1' %}&darr;
+       {% endif %}
+      </a></th>
+
+      <th><a href="{% url "exams" %}?order_by=exam_date{% if order_by == 'exam_date' and reverse != '1' %}&amp;reverse=1{% endif %}">
+         Дата та час
+       {% if order_by == 'exam_group' and reverse != '1' %}&uarr;
+       {% elif order_by == 'exam_group' and reverse == '1' %}&darr;
+       {% endif %}
+      </a></th>
+
+      <th>Дії</th>
+    </tr>
+  </thead>
+  {% endwith %}
+  <tbody>
+  {% for exam in exams %}
+    <tr>
+      <td>{{ exam.id }}</td>
+      <td><a href="{% url "exams_edit" exam.id %}">{{ exam.course }}</a></td>
+      <td><a href="{% url "exams_edit" exam.id %}">{{ exam.lecturer }}</a></td>
+      <td><a href="{% url "exams_edit" exam.id %}">{{ exam.exam_group }}</a></td>
+      <td><a href="{% url "exams_edit" exam.id %}">{{ exam.exam_date }}</a></td>
+      <td>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle"type="button" data-toggle="dropdown">
+          Дія
+        <span class="caret"></span>
+          </button>
+        <ul class="dropdown-menu" role="menu">
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="{% url "exams_edit" exam.id %}">Редагувати</a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="{% url "visit_student" 111 %}">Відвідування</a>
+        </li>
+        <li role="presentation">
+          <a role="menuitem" tabindex="-1" href="{%url "exams_delete" exam.id %}">Видалити</a>
+        </li>
+        </ul>
+    </div>
+  </td>
+  </tr>
+ {% endfor %}
+</tbody>
+</table>
+
+<!-- Pagination -->
+{% include "students/pagination.html" %}
+
+<!-- End Students Listing -->
+{% endblock content %}
+
+<!-- Start Footer -->
+{% block footer %}
+<div class="row" id="footer">
+  <div class="col-xs-12">
+    &copy; 2014 Сервіс Обліку Студентів
+  </div>
+</div>
+<!-- End Footer -->
+{% endblock footer %}

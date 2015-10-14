@@ -46,6 +46,11 @@
                 <a href="{% url "visitlog" %}">Відвідування</a>
             </li>
 
+            {% url "exams" as url_exams %}
+            <li role="presentation" {% if url_exams in request.path %} class="active" {% endif %}>
+                <a href="{% url "exams" %}">Іспити</a>
+            </li>
+
             {% url "groups" as url_groups %}
             <li role="presentation" {% if url_groups in request.path %} class="active" {% endif %}>
                 <a href="{% url "groups" %}">Групи</a>

@@ -1,3 +1,4 @@
 Django==1.8.4
 Pillow
 MySQL-python
+django-endless-pagination
