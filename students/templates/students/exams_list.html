@@ -60,8 +60,8 @@
 
       <th><a href="{% url "exams" %}?order_by=exam_date{% if order_by == 'exam_date' and reverse != '1' %}&amp;reverse=1{% endif %}">
          Дата та час
-       {% if order_by == 'exam_group' and reverse != '1' %}&uarr;
-       {% elif order_by == 'exam_group' and reverse == '1' %}&darr;
+       {% if order_by == 'exam_date' and reverse != '1' %}&uarr;
+       {% elif order_by == 'exam_date' and reverse == '1' %}&darr;
        {% endif %}
       </a></th>
 

@@ -34,11 +34,12 @@
     {% with order_by=request.GET.order_by reverse=request.GET.reverse%}
   <thead>
     <tr>
-        <th><a href="{% url "home" %}?order_by=id{% if order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">No
+        <th><a href="{% url "home" %}?order_by=id{% if order_by == 'id' and reverse != '1' %}&amp;reverse=1{% endif %}">
+          ID
           {% if order_by == 'id' and reverse != '1' %}&uarr;
           {% elif order_by == 'id' and reverse == '1' %}&darr;
           {% endif %}
-            </a>
+        </a>
         </th>
       <th>Фото</th>
       <th><a href="{% url "home" %}?order_by=last_name{% if order_by == 'last_name' and reverse != '1' %}&amp;reverse=1{% endif %}">

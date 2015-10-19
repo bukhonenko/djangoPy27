@@ -1,0 +1,108 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Додати студента{% endblock meta_title %}
+
+{% block title %}Додати студента{% endblock title %}
+
+<!-- Logo -->
+{% block logo %}
+<div class="col-xs-8">
+  <h1>Сервіс Обліку Студентів</h1>
+</div>
+{% endblock logo %}
+
+<!-- Groups Selector -->
+{% block groups_selector %}
+<div class="col-xs-4" id="group-selector">
+  <strong>Група:</strong>
+    <select>
+      <option value="">Усі Студенти</option>
+      <option value="">МтМ - 21, Подоба Віталій (No 254)</option>
+      <option value="">МтМ - 22, Корост Андрій (No 2123)</option>
+    </select>
+</div>
+{% endblock groups_selector %}
+
+{% block content %}
+<p>Скоро тут буде форма додавання студента</p>
+
+<form action="{% url "students_add" %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      <label for="first_name">Ім'я*</label>
+      <input type="text" value="" name="first_name" id="first_name"
+             placeholder="Введіть ваше ім’я"/>
+      <span class="help-block">{{ errors.first_name }}</span>
+    </div>
+
+    <div>
+      <label for="last_name">Прізвище*</label>
+      <input type="text" value="" name="last_name" id="last_name"
+             placeholder="Введіть ваше прізвище" />
+      <span class="help-block">{{ errors.last_name }}</span>
+    </div>
+
+    <div>
+      <label for="middle_name">По-батькові</label>
+      <input type="text" value="" name="middle_name" id="middle_name"
+             placeholder="Введіть ваше по-батькові"/>
+    </div>
+
+    <div>
+      <label for="birthday">Дата Народження*</label>
+      <input type="text" value=""name="birthday" id="birthday"
+             placeholder="Напр. 1984-12-30" />
+      <span class="help-block">{{ errors.birthday }}</span>
+    </div>
+
+    <div>
+      <label for="photo">Фото</label>
+      <input type="file" value="" name="photo" id="photo"/>
+      <span class="help-block">{{ errors.photo }}</span>
+    </div>
+
+    <div>
+      <label for="ticket">Білет*</label>
+      <input type="text" value="" name="ticket" id="ticket"
+            placeholder="Номер білету вкажіть тут"/>
+      <span class="help-block">{{ errors.ticket }}</span>
+    </div>
+
+    <div>
+      <label for="student_group">Група*</label>
+      <select name="student_group" id="student_group">
+      <option value="">Виберіть групу</option>
+      {% for group in groups %}
+      <option value="{{ group.id }}">{{ group.title }}</option>
+      {% endfor %}
+      </select>
+      <span class="help-block">{{ errors.student_group }}</span>
+
+    </div>
+
+    <div>
+      <label for="notes">Додаткові Нотатки</label>
+      <textarea name="notes" id="notes" class="form-control"></textarea>
+    </div>
+
+    <div>
+      <input type="submit" value="Додати" name="add_button" />
+      <button type="submit" name="cancel_button">Скасувати</button>
+    </div>
+</form>
+
+
+
+{% endblock content %}
+
+<!-- Start Footer -->
+{% block footer %}
+<div class="row" id="footer">
+  <div class="col-xs-12">
+    &copy; 2014 Сервіс Обліку Студентів
+  </div>
+</div>
+<!-- End Footer -->
+{% endblock footer %}
