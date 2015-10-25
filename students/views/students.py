@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # Create your views here.
+from datetime import datetime
 
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
@@ -23,7 +24,7 @@ def students_list(request):
             students = students.reverse()
 
     # paginate students
-    paginator = Paginator(students, 3)
+    paginator = Paginator(students, 6)
     page = request.GET.get('page')
     try:
         students = paginator.page(page)
@@ -66,7 +67,12 @@ def students_add(request):
             if not birthday:
                 errors['birthday'] = u"Дата народження є обов'язковою"
             else:
-                data['birthday'] = birthday
+                try:
+                    datetime.strptime(birthday, '%Y-%m-%d')
+                except Exception:
+                    errors['birthday'] = u"Введіть коректний формат дати (напр. 1984-12-30)"
+                else:
+                    data['birthday'] = birthday
 
             ticket = request.POST.get('ticket', '').strip()
             if not ticket:
@@ -78,30 +84,27 @@ def students_add(request):
             if not student_group:
                 errors['student_group'] = u"Оберіть групу для студента"
             else:
-                data['student_group'] = Group.objects.get(pk=student_group)
+                groups = Group.objects.filter(pk=student_group)
+                if len(groups) != 1:
+                    errors['student_group'] = u"Оберіть коректну групу"
+                else:
+                    data['student_group'] = groups[0]
 
             photo = request.FILES.get('photo')
-            if not photo:
-                errors['photo'] = u"*What the fuck!"
-            else:
+        #    if not photo:
+        #        errors['photo'] = u"*What the fuck!"
+        #    else:
+            if photo:
                 data['photo'] = photo
 
             if not errors:
             # create student object
-                student = Student(
-                    first_name=request.POST['first_name'],
-                    last_name=request.POST['last_name'],
-                    middle_name=request.POST['middle_name'],
-                    birthday=request.POST['birthday'],
-                    ticket=request.POST['ticket'],
-                    student_group=Group.objects.get(pk=request.POST['student_group']),
-                    photo=request.FILES['photo'],
-                    )
+                student = Student(**data)
                 # save it to database
                 student.save()
 
                 # redirect user to students list
-                return HttpResponseRedirect(reverse('home'))
+                return HttpResponseRedirect(u'%s?status_message=Студента успішно додано!' % reverse('home'))
 
             else:
                 # render form with errors and previous user input
@@ -110,7 +113,7 @@ def students_add(request):
 
         elif request.POST.get('cancel_button') is not None:
             # redirect to home page on cancel button
-            return HttpResponseRedirect(reverse('home'))
+            return HttpResponseRedirect(u'%s?status_message=Додавання студента скасовано!' % reverse('home'))
 
     else:
         # initial form render

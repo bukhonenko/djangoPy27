@@ -32,3 +32,12 @@ h1, h2, h3, h4, h5, h6 {font-weight: bold;}
    line-height: 30px;
    color: #555555;
    }
+   /* Form Styles */
+textarea,
+select,
+input {
+   max-width: 300px;
+   }
+.form-control{
+       height: auto;
+   }
