@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'endless_pagination',
+    'crispy_forms',
     'students',
 )
 
@@ -68,7 +69,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 "studentsdb.context_processors.students_proc",
                 'django.core.context_processors.request',
-                
+
             ],
         },
     },
@@ -94,7 +95,7 @@ from .db import DATABASES
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
 
 TIME_ZONE = 'Europe/Kiev'
 
@@ -114,3 +115,15 @@ PORTAL_URL = ''
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
+
+# email settings
+# please, set here you smtp server details and your admin email
+ADMIN_EMAIL = 'alex.bukhonenko@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '465'
+EMAIL_HOST_USER = 'alex.bukhonenko@gmail.com'
+EMAIL_HOST_PASSWORD = '******************'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

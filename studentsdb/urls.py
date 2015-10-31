@@ -40,6 +40,9 @@ urlpatterns = patterns('',
     url(r'^exams/(?P<gid>\d+)/edit/$','students.views.exams.exams_edit', name='exams_edit'),
     url(r'^exams/(?P<gid>\d+)/delete/$','students.views.exams.exams_delete', name='exams_delete'),
 
+    # Contact Admin Form
+    url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),
+
     url(r'^admin/', include(admin.site.urls)),
     )
 from .settings import MEDIA_ROOT, DEBUG

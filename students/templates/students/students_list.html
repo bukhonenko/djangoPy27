@@ -72,7 +72,7 @@
   <td>
     {% if student.photo %}
     <img src="{{ student.photo.url }}" height="30" width="30" class= "img-circle" />
-`   {% else %}
+    {% else %}
     <img class="img-circle" src="{% static "img/default_user.jpg" %}" height="30" width="30" />
     {% endif %}
   </td>
