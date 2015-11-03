@@ -1,0 +1,41 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% load crispy_forms_tags %}
+
+{% block meta_title %}Редагувати cтудента{% endblock meta_title %}
+
+{% block title %}Редагувати cтудента{% endblock title %}
+
+<!-- Logo -->
+{% block logo %}
+<div class="col-xs-8">
+  <h1>Сервіс Обліку Студентів</h1>
+</div>
+{% endblock logo %}
+
+<!-- Status_message -->
+{% block status_message %}
+{% if form.errors %}
+<div class="alert alert-warning" role="alert">
+Будь-ласка, виправте наступні помилки
+</div>
+{% endif %}
+{% endblock status_message %}
+
+{% block content %}
+
+{% crispy form %}
+
+{% endblock content %}
+
+<!-- Start Footer -->
+{% block footer %}
+<div class="row" id="footer">
+  <div class="col-xs-12">
+    &copy; 2014 Сервіс Обліку Студентів
+  </div>
+</div>
+<!-- End Footer -->
+{% endblock footer %}
