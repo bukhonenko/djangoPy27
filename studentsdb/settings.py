@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'endless_pagination',
+    #'endless_pagination',
     'crispy_forms',
     'students',
 )
