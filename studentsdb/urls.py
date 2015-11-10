@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from students.views.students import StudentUpdateView, StudentDeleteView
+from students.views.students import StudentUpdateView, StudentDeleteView, StudentCreateView
 
 urlpatterns = patterns('',
     # Students urls
     url(r'^$', 'students.views.students.students_list', name='home'),
-    url(r'^students/add/$', 'students.views.students.students_add', name='students_add'),
+    url(r'^students/add/$', StudentCreateView.as_view(), name='students_add'),
     url(r'^students/(?P<pk>\d+)/edit/$', StudentUpdateView.as_view(), name='students_edit'),
     url(r'^students/(?P<pk>\d+)/delete/$', StudentDeleteView.as_view(), name='students_delete'),
 
