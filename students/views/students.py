@@ -17,7 +17,6 @@ from crispy_forms.bootstrap import FormActions
 
 from ..models import Student, Group
 
-
 # Views for Students
 def students_list(request):
     students = Student.objects.all()
@@ -112,7 +111,6 @@ class StudentCreateView(CreateView):
             return HttpResponseRedirect(u'%s?status_message=Додавання студента відмінено!'% reverse('home'))
         else:
             return super(StudentCreateView, self).post(request, *args, **kwargs)
-
 
 class StudentUpdateView(UpdateView):
     model = Student

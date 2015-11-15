@@ -17,6 +17,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 from students.views.students import StudentUpdateView, StudentDeleteView, StudentCreateView
+from students.views.contact_admin import ContactView
 
 urlpatterns = patterns('',
     # Students urls
@@ -43,7 +44,9 @@ urlpatterns = patterns('',
     url(r'^exams/(?P<gid>\d+)/delete/$','students.views.exams.exams_delete', name='exams_delete'),
 
     # Contact Admin Form
-    url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),
+    url(r'^contact-admin/$', ContactView.as_view(), name='contact_admin'),
+    #  url(r'^contact-admin/$', 'students.views.contact_admin.contact_admin', name='contact_admin'),
+
 
     url(r'^admin/', include(admin.site.urls)),
     )
