@@ -18,6 +18,7 @@ from django.contrib import admin
 
 from students.views.students import StudentUpdateView, StudentDeleteView, StudentCreateView
 from students.views.contact_admin import ContactView
+from students.views.visitlog import JournalView
 
 urlpatterns = patterns('',
     # Students urls
@@ -33,7 +34,7 @@ urlpatterns = patterns('',
     url(r'^groups/(?P<gid>\d+)/delete/$','students.views.groups.groups_delete', name='groups_delete'),
 
     # Visitlog urls
-    url(r'^visitlog/$', 'students.views.visitlog.visit_log', name='visitlog'),
+    url(r'^visitlog/$', JournalView.as_view(), name='visitlog'),
     url(r'^visitlog/(?P<sid>\d+)/$', 'students.views.visitlog.visit_student', name='visit_student'),
     url(r'^visitlog/update/$', 'students.views.visitlog.visitlog_update', name='visitlog_update'),
 
