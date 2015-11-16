@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from django.shortcuts import render
-from django.views.generic.base import TemplateView
 from django.http import HttpResponse
+from django.views.generic.base import TemplateView
 
 # from .students import students_list
 from ..models import Student
