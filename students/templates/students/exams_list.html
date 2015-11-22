@@ -102,7 +102,9 @@
 </table>
 
 <!-- Pagination -->
-{% include "students/pagination.html" %}
+{% with object_list=exams %}
+  {% include "students/pagination.html" %}
+{% endwith %}
 
 <!-- End Students Listing -->
 {% endblock content %}

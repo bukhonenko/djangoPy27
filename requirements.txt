@@ -4,3 +4,4 @@ MySQL-python
 django-endless-pagination
 django-crispy-forms
 django-contact-form
+python-dateutil

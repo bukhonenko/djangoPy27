@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from ..models import Exam
+from ..util import paginate
 
 # Views for exams
 def exams_list(request):
@@ -19,19 +20,9 @@ def exams_list(request):
             exams = exams.reverse()
 
     # paginate exams
-    paginator = Paginator(exams, 3)
-    page = request.GET.get('page')
-    try:
-        exams = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        exams = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver
-        # last page of results.
-        exams = paginator.page(paginator.num_pages)
+    context = paginate(exams, 3, request, {}, var_name='exams')
 
-    return render(request, 'students/exams_list.html', {'exams': exams})
+    return render(request, 'students/exams_list.html', context)
 
 def exams_add(request):
     return HttpResponse('<h1>Exam Add Form</h1>')

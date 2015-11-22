@@ -16,6 +16,7 @@ from crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 
 from ..models import Student, Group
+from ..util import paginate
 
 # Views for Students
 def students_list(request):
@@ -30,19 +31,9 @@ def students_list(request):
             students = students.reverse()
 
     # paginate students
-    paginator = Paginator(students, 6)
-    page = request.GET.get('page')
-    try:
-        students = paginator.page(page)
-    except PageNotAnInteger:
-    # If page is not an integer, deliver first page.
-        students = paginator.page(1)
-    except EmptyPage:
-    # If page is out of range (e.g. 9999), deliver
-        # last page of results.
-        students = paginator.page(paginator.num_pages)
+    context = paginate(students, 6, request, {}, var_name='students')
 
-    return render(request, 'students/students_list.html', {'students': students})
+    return render(request, 'students/students_list.html', context)
 
 class StudentUpdateForm(ModelForm):
     class Meta:
