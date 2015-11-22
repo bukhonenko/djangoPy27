@@ -35,64 +35,58 @@ def students_list(request):
 
     return render(request, 'students/students_list.html', context)
 
-class StudentUpdateForm(ModelForm):
+class StudentForm(ModelForm):
     class Meta:
         model = Student
         fields = '__all__'
     def __init__(self, *args, **kwargs):
-        super(StudentUpdateForm, self).__init__(*args, **kwargs)
+        super(StudentForm, self).__init__(*args, **kwargs)
 
         self.helper = FormHelper(self)
+        #
+        #  add form or edit form
+        if kwargs['instance'] is None:
+            add_form = True
+        else:
+            add_form = False
 
         # set form tag attributes
-        self.helper.form_action = reverse('students_edit',
-            kwargs={'pk': kwargs['instance'].id})
+        if add_form:
+            self.helper.form_action = reverse('students_add')
+        else:
+            self.helper.form_action = reverse('students_edit',
+                kwargs={'pk': kwargs['instance'].id})
+
         self.helper.form_method = 'POST'
         self.helper.form_class = 'form-horizontal'
 
         # set form field properties
         self.helper.help_text_inline = True
-        self.helper.html5_required = True
+        self.helper.html5_required = False
         self.helper.label_class = 'col-sm-2 control-label'
         self.helper.field_class = 'col-sm-10'
 
         # add buttons
+        if add_form:
+            submit = Submit('add_button', u'Додати', css_class="btn btn-primary")
+        else:
+            submit = Submit('save_button', u'Зберегти', css_class="btn btn-primary")
+
         self.helper.layout[-1] = FormActions(
             Submit('add_button', u'Зберегти', css_class="btn btn-primary"),
             Submit('cancel_button', u'Скасувати', css_class="btn btn-link"),
         )
 
-class StudentCreateForm(ModelForm):
-    class Meta:
-        model = Student
-        fields = '__all__'
-    def __init__(self, *args, **kwargs):
-        super(StudentCreateForm, self).__init__(*args, **kwargs)
-
-        self.helper = FormHelper(self)
-
-        # set form tag attributes
-        self.helper.form_action = reverse('students_add')
-        self.helper.form_method = 'POST'
-        self.helper.form_class = 'form-horizontal'
-
-        # set form field properties
-        self.helper.help_text_inline = True
-        self.helper.html5_required = True
-        self.helper.label_class = 'col-sm-2 control-label'
-        self.helper.field_class = 'col-sm-10'
-
-        # add buttons
         self.helper.layout[-1] = FormActions(
-            Submit('add_button', u'Зберегти', css_class="btn btn-primary"),
+            submit,
             Submit('cancel_button', u'Скасувати', css_class="btn btn-link"),
         )
 
 class StudentCreateView(CreateView):
     model = Student
-    template_name = 'students/students_add.html'
+    template_name = 'students/add_edit_students.html'
     # fields = '__all__'
-    form_class = StudentCreateForm
+    form_class = StudentForm
 
     def get_success_url(self):
         return u'%s?status_message=Студента успішно додано!' % reverse('home')
@@ -105,9 +99,9 @@ class StudentCreateView(CreateView):
 
 class StudentUpdateView(UpdateView):
     model = Student
-    template_name = 'students/students_edit.html'
+    template_name = 'students/add_edit_students.html'
     # fields = '__all__'
-    form_class = StudentUpdateForm
+    form_class = StudentForm
 
     def get_success_url(self):
         return u'%s?status_message=Студента успішно збережено!' % reverse('home')
