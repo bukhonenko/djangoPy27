@@ -3,8 +3,12 @@
 # Create your views here.
 
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views.generic import UpdateView, DeleteView, CreateView
+from django.db.models.deletion import ProtectedError
+
 from ..models import Group
 from ..util import paginate
 
@@ -30,5 +34,19 @@ def groups_add(request):
 def groups_edit(request, gid):
     return HttpResponse('<h1>Edit Group %s</h1>' % gid)
 
-def groups_delete(request, gid):
-    return HttpResponse('<h1>Delete Group %s</h1>' % gid)
+# def groups_delete(request, gid):
+#     return HttpResponse('<h1>Delete Group %s</h1>' % gid)
+
+class GroupDeleteView(DeleteView):
+    model = Group
+    template_name = 'students/groups_confirm_delete.html'
+
+    def get_success_url(self):
+        return u'%s?status_message= Групу успішно видалено!' % reverse('home')
+
+    def post(self, request, *args, **kwargs):
+        try:
+            return self.delete(request, *args, **kwargs)
+
+        except ProtectedError:
+            return HttpResponseRedirect(u'%s?status_message=Група не може бути видалена зараз!'% reverse('groups'))

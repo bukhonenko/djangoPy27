@@ -1,6 +1,16 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
+"""Paginate objects provided by view.
+        This function takes:
+        * list of elements;
+        * number of objects per page;
+        * request object to get url parameters from;
+        * context to set new variables into;
+        * var_name - variable name for list of objects.
+    It returns updated context object.
+    """
+
 def paginate(objects, size, request, context, var_name='object_list'):
     """Paginate objects provided by view"""
     # apply pagination
