@@ -8,13 +8,6 @@
 
 {% block title %}Видалити cтудента{% endblock title %}
 
-<!-- Logo -->
-{% block logo %}
-<div class="col-xs-8">
-  <h1>Сервіс Обліку Студентів</h1>
-</div>
-{% endblock logo %}
-
 {% block content %}
 
 <form action="{% url "students_delete" object.id %}" method="post">

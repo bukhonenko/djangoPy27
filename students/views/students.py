@@ -16,11 +16,17 @@ from crispy_forms.layout import Submit
 from crispy_forms.bootstrap import FormActions
 
 from ..models import Student, Group
-from ..util import paginate
+from ..util import paginate, get_current_group
 
 # Views for Students
 def students_list(request):
-    students = Student.objects.all()
+    # check if we need to show only one group of students
+    current_group = get_current_group(request)
+    if current_group:
+        students = Student.objects.filter(student_group=current_group)
+    else:
+        # otherwise show all students
+        students = Student.objects.all()
 
     # try to order students list
     order_by = request.GET.get('order_by', '')

@@ -6,25 +6,6 @@
 
 {% block title %}База Студентів{% endblock title %}
 
-<!-- Logo -->
-{% block logo %}
-<div class="col-xs-8">
-  <h1>Сервіс Обліку Студентів</h1>
-</div>
-{% endblock logo %}
-
-<!-- Groups Selector -->
-{% block groups_selector %}
-<div class="col-xs-4" id="group-selector">
-  <strong>Група:</strong>
-    <select>
-      <option value="">Усі Студенти</option>
-      <option value="">МтМ - 21, Подоба Віталій (No 254)</option>
-      <option value="">МтМ - 22, Корост Андрій (No 2123)</option>
-    </select>
-</div>
-{% endblock groups_selector %}
-
 {% block content %}
 <!-- Add Student Button -->
 <a href="{%url "students_add" %}" class="btn btn-primary">Додати Студента</a>
