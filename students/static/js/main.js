@@ -54,14 +54,25 @@ function initGroupSelector() {
 }
 
 function initDateFields() {
-$('input.dateinput').datetimepicker({
-'format': 'YYYY-MM-DD'}).on('dp.hide', function(event){
-$(this).blur();
-  });
+    $('input.dateinput').datetimepicker({
+        'format': 'YYYY-MM-DD',
+        // locale: 'uk'
+    }).on('dp.hide', function(event){
+    $(this).blur();
+    });
+}
+
+function initEditStudentPage() {
+    $('a.student-edit-form-link').click(function(event){
+        var modal = $('#myModal');
+        modal.modal('show');
+            return false;
+    });
 }
 
 $(document).ready(function(){
     initJournal();
     initGroupSelector();
     initDateFields();
+    // initEditStudentPage();
     });

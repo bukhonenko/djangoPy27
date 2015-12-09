@@ -4,3 +4,4 @@
 *.mo
 *.egg
 db.py
+*.log
