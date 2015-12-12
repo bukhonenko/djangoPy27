@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 
 from django import forms
 from django.shortcuts import render
@@ -47,37 +48,37 @@ class ContactForm(forms.Form):
         max_length=2560,
         widget=forms.Textarea)
 
-class ContactView(FormView):
-    template_name = 'contact_admin/form.html'
-    form_class = ContactForm
-    success_url = 'home'
+# class ContactView(FormView):
+#     template_name = 'contact_admin/form.html'
+#     form_class = ContactForm
+#     success_url = 'home'
+#
+#     def form_valid(self, form):
+#         # This method is called when valid form data has been POSTed.
+#         # It should return an HttpResponse.
+#         if form.is_valid():
+#             # send email
+#             subject = form.cleaned_data['subject']
+#             message = form.cleaned_data['message']
+#             from_email = form.cleaned_data['from_email']
+#
+#             try:
+#                 send_mail(subject,message, from_email, [ADMIN_EMAIL])
+#
+#             except Exception:
+#                 message = u'Під час відправки листа виникла непередбачувана помилка. \
+#                 Спробуйте скористатись даною формою пізніше.'
+#
+#             else:
+#                 message = u'Повідомлення успішно надіслане!'
+#
+#             # redirect to same contact page with success message
+#             return HttpResponseRedirect(
+#                    u'%s?status_message=%s' % (reverse('contact_admin'),message))
+#
+#         return super(ContactView, self).form_valid(form)
+#
 
-    def form_valid(self, form):
-        # This method is called when valid form data has been POSTed.
-        # It should return an HttpResponse.
-        if form.is_valid():
-            # send email
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
-            from_email = form.cleaned_data['from_email']
-
-            try:
-                send_mail(subject,message, from_email, [ADMIN_EMAIL])
-
-            except Exception:
-                message = u'Під час відправки листа виникла непередбачувана помилка. \
-                Спробуйте скористатись даною формою пізніше.'
-
-            else:
-                message = u'Повідомлення успішно надіслане!'
-
-            # redirect to same contact page with success message
-            return HttpResponseRedirect(
-                   u'%s?status_message=%s' % (reverse('contact_admin'),message))
-
-        return super(ContactView, self).form_valid(form)
-
-'''
 def contact_admin(request):
     # check if form was posted
     # if this is a POST request we need to process the form data
@@ -92,11 +93,14 @@ def contact_admin(request):
             from_email = form.cleaned_data['from_email']
 
             try:
-                send_mail(subject,message, from_email, [ADMIN_EMAIL])
+                send_mail(subject, message, from_email, [ADMIN_EMAIL])
 
             except Exception:
                 message = u'Під час відправки листа виникла непередбачувана помилка. \
                 Спробуйте скористатись даною формою пізніше.'
+
+                logger = logging.getLogger(__name__)
+                logger.exception(message)
 
             else:
                 message = u'Повідомлення успішно надіслане!'
@@ -110,4 +114,3 @@ def contact_admin(request):
         form = ContactForm()
 
     return render(request, 'contact_admin/form.html', {'form': form})
-'''
